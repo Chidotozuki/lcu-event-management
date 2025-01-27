@@ -6,6 +6,7 @@ import EventList from "./pages/EventList/EventList";
 import Eventdetails from "./pages/EventDetails/Eventdetails";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
+import FilterEvents from "./pages/FilterEvents/FilterEvents";
 function App() {
   return (
     <>
@@ -15,7 +16,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="find-events" element={<EventList />} />
+            <Route path="all-events" element={<EventList />} />
+            <Route path="find-events" element={<FilterEvents />} />
             <Route path="event/:id" element={<Eventdetails />} />
         </Route>
         </Routes>
