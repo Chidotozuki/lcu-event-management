@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import EventList from "./pages/EventList/EventList";
 import Eventdetails from "./pages/EventDetails/Eventdetails";
 import Login from "./pages/Login/Login";
-import SignUp from "./pages/Login/SignUp";
+import SignUp from "./pages/SignUp/SignUp";
 import FilterEvents from "./pages/FilterEvents/FilterEvents";
 function App() {
   return (
