@@ -1,4 +1,70 @@
-.container{
+.home {
     background-color:  #ccc8c8;
-    height: 400px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #39659e, #2a4a6e);
+    color: white;
+    padding: 100px 20px;
+    width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #dd127b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature {
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .feature .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    color: #555;
+  }

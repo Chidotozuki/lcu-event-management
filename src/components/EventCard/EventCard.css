@@ -45,3 +45,35 @@
   color: #39659e;
   text-decoration: none;
 }
+
+.show-interest-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.show-interest-container button {
+  padding: 8px 16px;
+  background-color: #39659e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.show-interest-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.show-interest-container button:hover:not(:disabled) {
+  background-color: #2a4a6e;
+}
+
+.show-interest-container p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}

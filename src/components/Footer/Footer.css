@@ -1,11 +1,10 @@
-footer{
+footer {
     background-color: #021227;
     color: #999;
     text-align: center;
     padding: 10px 20px;
-    position: fixed;
-    bottom: 0;
     height: 40px;
     width: 100%;
     z-index: 100;
-}
+    margin-top: auto; /* Ensures the footer sticks to the bottom if content is short */
+  }
