@@ -4,7 +4,7 @@ import Meta from "../../components/Meta.jsx";
 import "./EventList.css";
 const EventList = () => {
   const renderEventCards = () => {
-    return eventList.map(({ id, date, heading, location, img }) => {
+    return eventList.map(({ id, date, heading, location, img,interestCount }) => {
       return (
         <>
           <Meta title="Events" />
@@ -15,6 +15,7 @@ const EventList = () => {
             heading={heading}
             location={location}
             img={img}
+            interestCount={interestCount}
           />
         </>
       );

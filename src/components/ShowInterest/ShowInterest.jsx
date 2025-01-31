@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
-// import './ShowInterest.module.css';
-const ShowInterest = ({ eventId, initialInterestCount }) => {
-  const [interested, setInterested] = useState(false);
+import { useState } from "react";
+
+const ShowInterest = ({ initialInterestCount }) => {
+  const [hasShownInterest, setHasShownInterest] = useState(false);
   const [interestCount, setInterestCount] = useState(initialInterestCount);
 
   const handleShowInterest = () => {
-    if (!interested) {
-      setInterestCount(interestCount + 1);
-      setInterested(true);
-    } else {
-      setInterestCount(interestCount - 1);
-      setInterested(false);
+    if (!hasShownInterest) {
+      setHasShownInterest(true);
+      setInterestCount((prev) => prev + 1);
     }
   };
 
   return (
-    <div>
-      <button onClick={handleShowInterest} disabled={interested}>
-        {interested ? 'Interested!' : 'Show Interest'}
-      </button>
-      <p>{interestCount} people interested</p>
-    </div>
+    <button
+      onClick={handleShowInterest}
+      disabled={hasShownInterest}
+      className={`show-interest-button ${hasShownInterest ? "disabled" : ""}`}
+    >
+      {hasShownInterest ? "Interested ✅" : "Show Interest"} 
+      <span className="interest-count">({interestCount})</span>
+    </button>
   );
 };
 

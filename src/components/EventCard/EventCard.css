@@ -1,38 +1,51 @@
 .card {
   background-color: white;
-  width: 600px;
+  width: 600px; 
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse; 
+  justify-content: space-between;
   align-items: center;
   gap: 24px;
   padding: 32px;
   border-radius: 18px;
-  /* border: 2px solid var(--primary-color); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
+
 .card:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.187);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-.card img {
+
+
+.card-img-wrapper {
+  flex-shrink: 0;
   width: 280px;
-  border-radius: 14px;
 }
-.card .card-content {
-  width: 230px;
-  height: 180px;
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.card-content {
+  width: 230px; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  text-align: left;
 }
-.card .card-content h3 {
+
+.card-content h3 {
   font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 40px;
-  text-decoration: none;
   color: #39659e;
 }
-.card .card-content p {
+
+.card-content p {
   font-size: 18px;
   width: 100%;
   display: flex;
@@ -40,11 +53,12 @@
   align-items: center;
   margin-top: 18px;
 }
-.card .card-content p span {
+
+.card-content p span {
   font-size: 16px;
   color: #39659e;
-  text-decoration: none;
 }
+
 
 .show-interest-container {
   margin-top: 20px;
@@ -60,6 +74,9 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  width: 100%; 
+  max-width: 200px;
+  text-align: center;
 }
 
 .show-interest-container button:disabled {
@@ -68,12 +85,32 @@
 }
 
 .show-interest-container button:hover:not(:disabled) {
-  background-color: #2a4a6e;
+  background-color: #dd127b;
 }
 
-.show-interest-container p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column; /* Stack content on small screens */
+    width: 100%; /* Full width on small screens */
+    max-width: 600px; /* Prevent stretching */
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    max-width: 280px; /* Keep original size */
+  }
+
+  .card-content {
+    width: 100%;
+    max-width: 230px; /* Maintain original text width */
+    align-items: center;
+  }
+
+  .show-interest-container {
+    justify-content: center;
+  }
 }
