@@ -1,41 +1,27 @@
 import { useState } from 'react';
-import { supabase } from '../../utils/supabaseClient';
 import './Login.css';
+import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const { signIn, loading } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // Handle email/password sign-in
-  const handleLogin = async () => {
-    setLoading(true);
-    try {
-      const { error } = await supabase.auth.signInWithOtp({ email });
-      if (error) throw error;
-      alert('Check your email for the login link!');
-    } catch (error) {
-      setErrorMessage(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //error handling.
+  const [error, setError] = useState("");
 
-  // Handle Google login
-  const handleGoogleLogin = async () => {
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
-      if (error) throw error;
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
-  };
+  async function handleSubmit() {
+    if (email === "" || password === "") setError("This field cannot be empty");
+    else setError("");
+    await signIn(email, password);
+  }
+
 
   return (
     <div className='login-main'>
       <div className='login-container'>
       <h1 className='login-title'>Login</h1>
-      {errorMessage && <p className='login-error'>{errorMessage}</p>}
+      {error && <p className='login-error'>{error}</p>}
       <div className='login-form'>
         <label className='login-login-label'>Email</label>
         <input
@@ -45,14 +31,18 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button className='login-button' onClick={handleLogin} disabled={loading}>
-          {loading ? 'Loading...' : 'Login with Email'}
+        <label className='login-login-label'>Password</label>
+        <input
+          className='login-input'
+          type="password"
+          placeholder="Enter your email"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className='login-button' onClick={handleSubmit} disabled={loading}>
+          {loading ? 'Loading...' : 'Login'}
         </button>
       </div>
-      <hr className='login-divider' />
-      <button className='login-googleButton' onClick={handleGoogleLogin}>
-        Login with Google
-      </button>
     </div>
     </div>
   );

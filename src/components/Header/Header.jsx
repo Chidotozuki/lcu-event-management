@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/logo.png'; // Path to the logo image
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({user}) => {
   return (
     <nav className="header">
       <div className="logo-container">
@@ -15,8 +16,16 @@ const Header = () => {
         <li><Link to="/about" className="nav-link">About</Link></li>
         <li><Link to="/all-events" className="nav-link">Events</Link></li>
         <li><Link to="/find-events" className="nav-link">Find Events</Link></li>
-        <li><Link to="/login" className="button login">Login</Link></li>
-        <li><Link to="/signup" className="button signup">Signup</Link></li>
+        {
+          user && (
+            <>
+             <li><Link to="/login" className="button login">Login</Link></li>
+             <li><Link to="/signup" className="button signup">Signup</Link></li>
+            </>
+          )
+        }
+        <div >
+        </div>
       </ul>
     </nav>
   );

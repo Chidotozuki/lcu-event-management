@@ -14,10 +14,13 @@ import MyEvents from "./components/DashBoard/MyEvents";
 import InterestedEvents from "./components/DashBoard/InterestedEvents";
 import CreateEvent from "./components/DashBoard/CreateEvent";
 import Settings from "./components/DashBoard/Settings";
+import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./context/AuthContext";
+
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+    <AuthProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -36,8 +39,9 @@ function App() {
             </Route>
           </Route>
         </Routes>
+        <Toaster/>
+    </AuthProvider>
       </BrowserRouter>
-    </>
   );
 }
 

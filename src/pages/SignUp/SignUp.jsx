@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { supabase } from '../../utils/supabaseClient';
 import './SignUp.css';
+import { useAuth } from '../../context/AuthContext';
 
 const SignUp = () => {
+  const { signUp, loading } = useAuth();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -10,7 +11,6 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
   });
-  const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -36,39 +36,10 @@ const SignUp = () => {
       setErrorMessage('Passwords do not match.');
       return;
     }
-
-    setLoading(true);
     setErrorMessage('');
     setSuccessMessage('');
 
-    try {
-      // Supabase sign-up logic
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            first_name: firstName,
-            last_name: lastName,
-          },
-        },
-      });
-
-      if (error) throw error;
-
-      setSuccessMessage('Sign-up successful! Please check your email to verify your account.');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      });
-    } catch (error) {
-      setErrorMessage(error.message);
-    } finally {
-      setLoading(false);
-    }
+    await signUp({ fullName: `${firstName} ${lastName}`, password, phone: "",email});
   };
 
   return (
