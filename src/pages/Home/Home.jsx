@@ -12,7 +12,7 @@ const Home = () => {
         <div className="hero-content">
           <h1>Welcome to LCU Events</h1>
           <p>Your go-to platform for creating and discovering amazing events.</p>
-          <Link to="/events" className="cta-button">
+          <Link to="/find-events" className="cta-button">
             Explore Events
           </Link>
         </div>
