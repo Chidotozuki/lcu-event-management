@@ -1,8 +1,8 @@
 import SideBar from './SideBar';
 import { Outlet } from 'react-router-dom';
-import './DashBoard.css'; // Dashboard-specific styles
+import './Dashboard.css'; // Dashboard-specific styles
 
-function DashBoard() {
+function Dashboard() {
   return (
     <div className="dashboard">
       <SideBar />
@@ -13,4 +13,4 @@ function DashBoard() {
   );
 }
 
-export default DashBoard;
+export default Dashboard;

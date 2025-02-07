@@ -7,7 +7,7 @@ import EventDetails from "./pages/EventDetails/EventDetails";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import FilterEvents from "./pages/FilterEvents/FilterEvents";
-import DashBoard from "./components/DashBoard/DashBoard";
+import Dashboard from "./components/DashBoard/Dashboard";
 import About from "./pages/About/About";
 import DashHome from "./components/DashBoard/DashHome";
 import MyEvents from "./components/DashBoard/MyEvents";
@@ -30,7 +30,7 @@ function App() {
             <Route path="all-events" element={<EventList />} />
             <Route path="find-events" element={<FilterEvents />} />
             <Route path="event/:id" element={<EventDetails />} />
-            <Route path="dashboard/*" element={<DashBoard />}>
+            <Route path="dashboard/*" element={<Dashboard />}>
               <Route index element={<DashHome />} /> {/* Default dashboard page */}
               <Route path="my-events" element={<MyEvents />} />
               <Route path="interested-events" element={<InterestedEvents />} />
