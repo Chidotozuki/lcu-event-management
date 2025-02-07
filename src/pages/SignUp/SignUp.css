@@ -6,37 +6,44 @@
   max-height: fit-content;
   place-items: center;
 }
+
 .sign-container {
-  max-width: 400px;
+  max-width: 90%; /* Use percentage for responsiveness */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   font-family: Arial sans-serif;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0 0 0 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .sign-title {
-  font-size: 24px;
+  font-size: 24px; /* Original font size */
   margin-bottom: 1rem;
 }
+
 .sign-error {
   color: red;
   margin-bottom: 1rem;
 }
+
 .sign-success {
   color: green;
   margin-bottom: 1rem;
 }
+
 .sign-form {
   margin-bottom: 1rem;
 }
+
 .sign-label {
   display: block;
   text-align: left;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
+
 .sign-input {
   width: 100%;
   padding: 0.5rem;
@@ -44,6 +51,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .sign-button {
   width: 100%;
   padding: 0.75rem;
@@ -53,4 +61,23 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .sign-container {
+    padding: 1rem; /* Reduced padding for mobile */
+  }
+
+  .sign-title {
+    font-size: 20px; /* Reduced font size for mobile */
+  }
+
+  .sign-label {
+    font-size: 14px; /* Reduced font size for mobile */
+  }
+
+  .sign-button {
+    font-size: 14px; /* Reduced font size for buttons */
+  }
 }

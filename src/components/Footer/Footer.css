@@ -2,9 +2,16 @@ footer {
     background-color: #021227;
     color: #999;
     text-align: center;
-    padding: 10px 20px;
-    height: 40px;
+    padding: 10px 20px; /* Adjusted for mobile */
+    min-height: 40px; /* Changed from fixed height */
     width: 100%;
     z-index: 100;
     margin-top: auto; /* Ensures the footer sticks to the bottom if content is short */
-  }
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+    footer {
+        padding: 5px 10px; /* Reduced padding for mobile */
+    }
+}

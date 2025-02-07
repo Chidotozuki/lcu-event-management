@@ -1,6 +1,6 @@
 .card {
   background-color: white;
-  width: 600px; 
+  width: 90%; /* Changed from fixed width to percentage */
   display: flex;
   flex-direction: row-reverse; 
   justify-content: space-between;
@@ -11,6 +11,34 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column; /* Stack content on small screens */
+    width: 100%; /* Full width on small screens */
+    max-width: 600px; /* Prevent stretching */
+    align-items: center;
+    text-align: center;
+    padding: 24px; /* Reduced padding for mobile */
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    max-width: 280px; /* Keep original size */
+  }
+
+  .card-content {
+    width: 100%;
+    max-width: 230px; /* Maintain original text width */
+    align-items: center;
+  }
+
+  .show-interest-container {
+    justify-content: center;
+  }
+}
+
 
 .card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);

@@ -75,3 +75,57 @@
   background-color: #dd127b;
   color: white;
 }
+
+.hamburger{
+  display: none;
+}
+
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px; /* Adjust padding for mobile */
+  }
+
+  .logo{
+    margin-right: unset;
+  }
+
+  .nav-links {
+    position: fixed;
+    height: 100dvh;
+    background-color: white;
+    display: none; /* Hide navigation links */
+    justify-content: start;
+    flex-direction: column; /* Stack navigation links */
+    gap: 32px; /* Adjust gap for mobile */
+    right: 0;
+    top: 0;
+  }
+
+  .nav-link {
+    font-size: 1rem; /* Reduce font size for links */
+    color: #39659e;
+  }
+
+  .hamburger{
+    display: flex;
+  }
+
+  .dh{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ghg{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show navigation links when hamburger is active */
+  }
+}
