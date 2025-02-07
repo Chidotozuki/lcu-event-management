@@ -75,6 +75,9 @@
 
 /* Mobile Styles */
 @media (max-width: 640px) {
+  .login-main{
+    height: 65vh;
+  }
   .login-container {
     padding: 1rem; /* Reduced padding for mobile */
   }

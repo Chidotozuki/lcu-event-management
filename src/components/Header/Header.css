@@ -126,6 +126,8 @@
   }
 
   .nav-links.active {
-    display: flex; /* Show navigation links when hamburger is active */
+    display: flex; 
+    padding: 20px;
+    height: fit-content;/* Show navigation links when hamburger is active */
   }
 }

@@ -41,4 +41,12 @@
   .filter-card button:hover {
     background-color: rgb(9, 140, 16);
   }
+  @media (max-width: 640px) {
+    .filter-card {
+      width: 100%;
+    }
+    .wrapper {
+      width: 105%;
+    }
+  }
   

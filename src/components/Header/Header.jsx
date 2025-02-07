@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // Import PropTypes
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/logo.png'; // Path to the logo image
-import { FaHamburger} from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import {  FaX } from 'react-icons/fa6';
 
 const Header = ({ user, signOut }) => {
@@ -21,7 +21,7 @@ const Header = ({ user, signOut }) => {
         <span className="header-text">LCU Events</span>
       </div>
       <div onClick={toggleNav}>
-      <FaHamburger className='hamburger' size={42} color='white'/>
+      <GiHamburgerMenu className='hamburger' size={42} color='white'/>
       </div>
       </div>
       <ul className={`nav-links ${isNavOpen ? 'active' : ''}`}>

@@ -65,6 +65,9 @@
 
 /* Mobile Styles */
 @media (max-width: 640px) {
+  .sign-main{
+    height: 65vh;
+  }
   .sign-container {
     padding: 1rem; /* Reduced padding for mobile */
   }
