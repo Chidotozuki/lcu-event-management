@@ -3,7 +3,7 @@ import "./App.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home/Home";
 import EventList from "./pages/EventList/EventList";
-import EventDetails from "./pages/EventDetails/Eventdetails";
+import EventDetails from "./pages/EventDetails/EventDetails";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import FilterEvents from "./pages/FilterEvents/FilterEvents";
