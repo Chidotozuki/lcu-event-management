@@ -50,15 +50,24 @@
   text-decoration: none;
   transition: background-color 0.3s;
 }
-.login {
+.login, .head-logout {
   background-color: #dd127b; /* Secondary color */
   color: white; /* Tertiary color */
+}
+.head-dashboard{
+  background-color: white;
+  color: #dd127b;
+  height: fit-content;
+}
+.head-dashboard:hover{
+  background-color: #dd127b;
+  color: white;
 }
 .signup {
   background-color: white;
   color: #dd127b;
 }
-.login:hover {
+.login:hover, .head-logout:hover {
   background-color: white;
   color: #dd127b;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import EventCard from "../EventCard/EventCard"
 import {eventList} from '../../utils/EventDatabase'
 import "./SearchEventList.css"
@@ -12,7 +13,7 @@ const SearchEventList = ({monthYear})=>{
     })
 
     const renderEventCards =()=>{
-        return filteredEvents.map(({ id, date, heading, location, img })=>{
+        return filteredEvents.map(({ id, date, heading, location, img, interestCount })=>{
             return(
                 <EventCard
                 key={id}
@@ -21,6 +22,7 @@ const SearchEventList = ({monthYear})=>{
                 heading={heading}
                 location={location}
                 img={img}
+                interestCount={interestCount}
                 />
             )
         })

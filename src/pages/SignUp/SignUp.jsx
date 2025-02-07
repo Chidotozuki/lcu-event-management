@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import { useAuth } from '../../context/AuthContext';
 
@@ -13,6 +14,7 @@ const SignUp = () => {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -40,6 +42,7 @@ const SignUp = () => {
     setSuccessMessage('');
 
     await signUp({ fullName: `${firstName} ${lastName}`, password, phone: "",email});
+    navigate('/dashboard');
   };
 
   return (

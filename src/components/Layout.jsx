@@ -3,10 +3,10 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { useAuth } from "../context/AuthContext";
 const Layout = () => {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   return(
     <>
-        <Header user={user} />
+        <Header user={user} signOut={signOut} />
         <Outlet />
         <Footer />
     </>
